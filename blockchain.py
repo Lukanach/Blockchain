@@ -69,7 +69,7 @@ def mine_block():
         'amount': MINING_REWARD
     }
     copied_transactions = open_transactions[:]
-    open_transactions.append(reward_transaction)
+    copied_transactions.append(reward_transaction)
     block = {
             'previous_hash': 'XYZ',
              'index': len(blockchain),
@@ -80,7 +80,7 @@ def mine_block():
 
 
 def get_transaction_value():
-    tx_recipient = input('Enter the recipient of the trnsaction: ')
+    tx_recipient = input('Enter the recipient of the transaction: ')
     tx_amount = float(input('Your transaction amount: '))
     return tx_recipient, tx_amount
 
@@ -152,9 +152,9 @@ while waiting_for_input:
         print('Input is invalid')
     # if not verify_chain():
     #     print_blockchain_elements()
-    #     print('Invalid blockchain')
+    #     print('Invalid blockchain!')
     #     break
-    print(get_balance('Max'))
+    print('Balance of {}: {:6.2f}'.format('Max', get_balance('Max')))
 else:
     print('User left')
 
